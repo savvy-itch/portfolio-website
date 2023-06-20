@@ -126,7 +126,7 @@ h3 {
   background-repeat: no-repeat;
   align-self: stretch;
   background-size: cover;
-  filter: opacity(0.4) brightness(0.5);
+  filter: opacity(0.4) brightness(0.6);
   background-attachment: fixed;
   background-position: left;
 }
@@ -265,6 +265,16 @@ h3 {
   padding: 1rem;
   font-size: 1.6rem;
   border-bottom: 2px solid #191d32;
+}
+.project-header-icons-wrapper {
+  display: flex;
+}
+.project-header-icons-wrapper > i,
+.project-header-icons-wrapper > img {
+  margin: 0 2px;
+}
+.icon-img {
+  height: 25px;
 }
 .project-code-link {
   color: black;
