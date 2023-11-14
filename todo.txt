@@ -1,0 +1,3 @@
+- add activity section
+- update skills
+- optimization

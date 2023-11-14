@@ -8,7 +8,7 @@ const navLinks = links.querySelectorAll('a');
 const navToggle = document.querySelector('.nav-toggle');
 const showLinks = document.querySelector('.show-links');
 const headerTxt = "Hello, I'm Mykhailo";
-const subheaderTxt = "Front-End Developer";
+const subheaderTxt = "Front-end Developer";
 let typeSpeed = 95;
 let cursorSpeed = 500;
 let showCursor = true;
@@ -54,13 +54,12 @@ function displayTooltip(e) {
     tooltip.classList.add('tooltip');
     tooltip.innerText = e.target.dataset.tech;
     e.target.parentElement.appendChild(tooltip);
-    tooltip.style.top = e.clientY - 20 + 'px';
-    tooltip.style.left = e.clientX + 10 + 'px';
   }
 }
 function hideTooltip(e) {
-  const tooltip = e.target.parentElement.querySelector('.tooltip');
-  e.target.parentElement.removeChild(tooltip)
+  const iconWrapper = e.target.parentElement;
+  const tooltip = iconWrapper.querySelector('.tooltip');
+  iconWrapper.removeChild(tooltip)
 }
 
 // smooth scrolling

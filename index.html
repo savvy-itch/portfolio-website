@@ -5,7 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/projects.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon.ico">
   <title>Portfolio Website</title>
 </head>
 <body>
@@ -101,14 +103,44 @@
           <div class="project-card">
             <div class="project-header">
               <div class="project-header-icons-wrapper">
-                <i class="fa-brands fa-react icon" data-tech="react"></i>
-                <i class="fa-brands fa-css3-alt icon" data-tech="css"></i>
+                <div class="icon-wrapper">
+                  <img class="icon-img icon" src="./images/icons/react-icon.svg" alt="react" data-tech="react">
+                </div>
+                <div class="icon-wrapper">
+                  <img class="icon-img icon" src="./images/icons/next-icon.svg" alt="next.js" data-tech="next">
+                </div>
+                <div class="icon-wrapper">
+                  <img class="icon-img icon" src="./images/icons/ts-icon.svg" alt="typescript" data-tech="typescript">
+                </div>
+                <div class="icon-wrapper">
+                  <img class="icon-img icon" src="./images/icons/tailwind-icon.svg" alt="tailwind" data-tech="tailwind">
+                </div>
+              </div>
+              <a class="project-code-link" href="https://github.com/savvy-itch/vocab-it">View Code</a>
+            </div>
+            <a href="https://vocab-it.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <div class="project-thumbnail">
+                <img src="./images/vocabit_thumbnail.webp" alt="language learning app">
+              </div>
+              <div class="project-title">Vocab-It</div>
+            </a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-header-icons-wrapper">
+                <div class="icon-wrapper">
+                  <img class="icon-img icon" src="./images/icons/react-icon.svg" alt="react" data-tech="react">
+                </div>
+                <div class="icon-wrapper">
+                  <img class="icon-img icon" src="./images/icons/css-icon.svg" alt="css" data-tech="css">
+                </div>
               </div>
               <a class="project-code-link" href="https://github.com/savvy-itch/f1-stats-app">View Code</a>
             </div>
             <a href="https://f1-stats-react.netlify.app"  rel="noopener noreferrer"="_blank" rel="noopener noreferrer">
               <div class="project-thumbnail">
-                <img src="./images/f1_thumbnail.jpg" alt="f1 stats">
+                <img src="./images/f1_thumbnail.webp" alt="f1 stats">
               </div>
               <div class="project-title">Formula 1 Stats</div>
             </a>
@@ -117,15 +149,21 @@
           <div class="project-card">
             <div class="project-header">
               <div class="project-header-icons-wrapper">
-                <i class="fa-brands fa-html5 icon" data-tech="html"></i>
-                <i class="fa-brands fa-css3-alt icon" data-tech="css"></i>
-                <i class="fa-brands fa-square-js icon" data-tech="javascript"></i>
+                <div class="icon-wrapper">
+                  <img class="icon-img icon" src="./images/icons/html-icon.svg" alt="html" data-tech="html">
+                </div>
+                <div class="icon-wrapper">
+                  <img class="icon-img icon" src="./images/icons/css-icon.svg" alt="css" data-tech="css">
+                </div>
+                <div class="icon-wrapper">
+                  <img class="icon-img icon" src="./images/icons/js-icon.svg" alt="javascript" data-tech="javascript">
+                </div>
               </div>
               <a class="project-code-link" href="https://github.com/savvy-itch/pizza-web-app/tree/main">View Code</a>
             </div>
             <a href="https://prog-pizza-website.netlify.app" target="_blank" rel="noopener noreferrer">
               <div class="project-thumbnail">
-                <img src="./images/pizza-shop_thumbnail.jpg" alt="pizza shop">
+                <img src="./images/pizza-shop_thumbnail.webp" alt="pizza shop">
               </div>
             </a>
             <a href="https://prog-pizza-website.netlify.app" target="_blank" rel="noopener noreferrer">
@@ -136,31 +174,18 @@
           <div class="project-card">
             <div class="project-header">
               <div class="project-header-icons-wrapper">
-                <i class="fa-brands fa-html5 icon" data-tech="html"></i>
-                <i class="fa-brands fa-css3-alt icon" data-tech="css"></i>
-                <i class="fa-brands fa-square-js icon" data-tech="javascript"></i>
-              </div>
-              <a class="project-code-link" href="https://github.com/savvy-itch/Albums-App/tree/main">View Code</a>
-            </div>
-            <a href="https://albums-recommender-app.netlify.app/" target="_blank" rel="noopener noreferrer">
-              <div class="project-thumbnail">
-                <img src="./images/albums-app_thumbnail.jpg" alt="albums app">
-              </div>
-              <div class="project-title">Music Albums Recommender</div>
-            </a>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-header-icons-wrapper">
-                <i class="fa-brands fa-react icon" data-tech="react"></i>
-                <img class="icon-img icon" src="./images/redux_icon.png" data-tech="redux" alt="redux">
+                <div class="icon-wrapper">
+                  <img class="icon-img icon" src="./images/icons/react-icon.svg" alt="react" data-tech="react">
+                </div>
+                <div class="icon-wrapper">
+                  <img class="icon-img icon" src="./images/icons/redux-icon.svg" data-tech="redux" alt="redux">
+                </div>
               </div>
               <a class="project-code-link" href="https://github.com/savvy-itch/drum-machine">View Code</a>
             </div>
             <a href="https://drum-machine-redux-sib.netlify.app/" target="_blank" rel="noopener noreferrer">
               <div class="project-thumbnail">
-                <img src="./images/drum-machine.jpg" alt="drum machine app">
+                <img src="./images/drum-machine.webp" alt="drum machine app">
               </div>
               <div class="project-title">Drum Machine</div>
             </a>
