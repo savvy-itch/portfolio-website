@@ -73,8 +73,6 @@ navLinks.forEach(link => {
   })
 })
 
-
-
 // mobile navbar
 window.addEventListener('resize', handleLinksDisplay);
 
