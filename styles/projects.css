@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 100vh;
   flex-direction: column;
 }
 
@@ -13,11 +12,13 @@
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
   align-items: center;
+  margin: 1.5rem 0;
+  width: 100%;
 }
 .projects-grid a {
   text-decoration: none;
@@ -27,9 +28,12 @@
   background-color: #ccc;
   border: 1px solid hsl(246, 100%, 4%);
   border-radius: 12px;
-  max-width: 100%;
-  height: 100%;
-  justify-self: center;
+  width: 45%;
+  max-width: 80%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  transition: width 0.3s ease-out;
 }
 
 .project-header {
@@ -63,14 +67,18 @@
 }
 
 .project-thumbnail {
-  max-width: 100%;
+  width: 100%;
   overflow: hidden;
 }
 
-.project-thumbnail img {
-  max-width: 100%;
-  transform: scale(1.07);
-  transition: 0.2s;
+.thumbnail-wrapper {
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+  background-image: url("../images/vocabit_thumbnail.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .project-title {
@@ -89,10 +97,6 @@
 
 .project-card:hover .project-title {
   text-decoration: underline;
-}
-
-.project-card:hover .project-thumbnail img {
-  transform: scale(1.14);
 }
 
 .tooltip {
@@ -123,6 +127,61 @@
 
 .icon-wrapper {
   position: relative;
+}
+
+.expand-btn {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .projects-grid {
+    justify-content: center;
+    gap: 2rem;
+  }
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 300px;
+    flex-direction: column;
+  }
+  .project-details {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+  }
+  .project-thumbnail {
+    max-width: 100%;
+    height: 270px;
+  }
+  .expand-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .project-card:nth-child(odd):hover {
+    width: 80%;
+  }
+  .project-card:nth-child(odd):hover + .project-card {
+    width: 10%;
+  }
+  .project-card:nth-child(even):hover {
+    width: 80%;
+  }
+  .project-card:hover .project-details {
+    width: 60%;
+    padding: 1rem;
+  }
+  .project-card:hover .project-thumbnail {
+    max-width: 40%;
+  }
+  .project-details {
+    width: 0;
+  }
 }
 
 /*# sourceMappingURL=projects.css.map */

@@ -7,7 +7,7 @@ const liLinks = links.querySelectorAll('li');
 const navLinks = links.querySelectorAll('a');
 const navToggle = document.querySelector('.nav-toggle');
 const showLinks = document.querySelector('.show-links');
-const headerTxt = "Hello, I'm Mykhailo";
+const headerTxt = "Hello, I'm Michael";
 const subheaderTxt = "Front-end Developer";
 let typeSpeed = 95;
 let cursorSpeed = 500;
@@ -94,5 +94,41 @@ function handleLinksDisplay() {
     }
   } else {
     links.style.height = 'auto';
+  }
+}
+
+const projectsGrid = document.getElementById('projects-grid');
+const projectCards = [...projectsGrid.querySelectorAll('.project-card')];
+
+for(let i = 0; i < projectCards.length; i++) {
+  const expandBtn = projectCards[i].querySelector('.expand-btn');
+  console.log(expandBtn)
+  const cardDetails = projectCards[i].querySelector('.project-details');
+  expandBtn.addEventListener('click', () => handleDetailsDisplay(cardDetails, expandBtn));
+  if (i !== 0 && i % 2 !== 0) {
+    projectCards[i].addEventListener('mouseover', () => collapsePrevSibling(i));
+    projectCards[i].addEventListener('mouseout', () => resetPrevSibling(i));
+  }
+}
+
+function collapsePrevSibling(i) {
+  if (window.innerWidth >= 768) {
+    projectCards[i - 1].style.width = '10%';
+  }
+}
+
+function resetPrevSibling(i) {
+  if (window.innerWidth >= 768) {
+    projectCards[i - 1].style.width = '';
+  }
+}
+
+function handleDetailsDisplay(cardDetails, expandBtn) {
+  if (cardDetails.style.maxHeight) {
+    cardDetails.style.maxHeight = null;
+    expandBtn.innerText = `+`;
+  } else {
+    cardDetails.style.maxHeight = cardDetails.scrollHeight + 'px';
+    expandBtn.innerHTML = `-`;
   }
 }

@@ -1,3 +1,8 @@
-- add activity section
+- add "other activity" section
 - update skills
+! update projects section
+  + toggle collapse icon on mobile screen
+  - style details section
+  - dynamically populate projects
 - optimization
+- load CV button

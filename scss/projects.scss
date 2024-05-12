@@ -6,7 +6,6 @@ $font-color: hsl(246, 100%, 4%);
 
 .projects-section {
   @include flex-justify-around;
-  min-height: 100vh;
   flex-direction: column;
 }
 .projects-heading {
@@ -15,11 +14,13 @@ $font-color: hsl(246, 100%, 4%);
   font-weight: 700;
 }
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
   align-items: center;
+  margin: 1.5rem 0;
+  width: 100%;
 
   a {
     text-decoration: none;
@@ -29,10 +30,14 @@ $font-color: hsl(246, 100%, 4%);
   background-color: #ccc;
   border: 1px solid $font-color;
   border-radius: 12px;
-  max-width: 100%;
-  height: 100%;
-  justify-self: center;
+  width: 45%;
+  max-width: 80%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  transition: width .3s ease-out;
 }
+
 .project-header {
   @include flex-justify-between;
   padding: 1rem;
@@ -57,14 +62,31 @@ $font-color: hsl(246, 100%, 4%);
   text-decoration: underline;
 }
 .project-thumbnail {
-  max-width: 100%;
+  width: 100%;
   overflow: hidden;
 }
-.project-thumbnail img {
-  max-width: 100%;
-  transform: scale(1.07);
-  transition: .2s;
+
+.thumbnail-wrapper {
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+  background-image: url('../images/vocabit_thumbnail.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+// .thumbnail-wrapper img {
+//   min-height: 100%;
+//   max-width: 100%;
+// }
+
+// .project-thumbnail img {
+//   max-width: 100%;
+//   transform: scale(1.07);
+//   transition: .2s;
+// }
+
 .project-title {
   @include flex-center;
   padding: 1rem;
@@ -79,9 +101,9 @@ $font-color: hsl(246, 100%, 4%);
 .project-card:hover .project-title {
   text-decoration: underline;
 }
-.project-card:hover .project-thumbnail img {
-  transform: scale(1.14);
-}
+// .project-card:hover .project-thumbnail img {
+//   transform: scale(1.14);
+// }
 .tooltip {
   background-color: $tooltip-bg;
   color: $tooltip-text;
@@ -108,4 +130,75 @@ $font-color: hsl(246, 100%, 4%);
 }
 .icon-wrapper {
   position: relative;
+}
+
+.expand-btn {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .projects-grid {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 300px;
+    flex-direction: column;
+  }
+  
+  .project-details {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .3s ease-out;
+  }
+
+  .project-thumbnail {
+    max-width: 100%;
+    height: 270px;
+  }
+
+  .expand-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  // expand left card
+  .project-card:nth-child(odd):hover {
+    width: 80%;
+  }
+
+  // collapse right card when left one is expanded
+  .project-card:nth-child(odd):hover + .project-card {
+    width: 10%;
+  }
+
+  // expand right card
+  // left card collapse is done with JS
+  .project-card:nth-child(even):hover {
+    width: 80%;
+  }
+
+  .project-card:hover {
+    .project-details {
+      width: 60%;
+      padding: 1rem;
+    }
+  
+    .project-thumbnail {
+      max-width: 40%;
+    }
+  }
+
+  .project-details {
+    width: 0;
+  }
 }
