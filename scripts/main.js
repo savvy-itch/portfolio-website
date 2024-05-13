@@ -98,37 +98,37 @@ function handleLinksDisplay() {
 }
 
 const projectsGrid = document.getElementById('projects-grid');
-const projectCards = [...projectsGrid.querySelectorAll('.project-card')];
+// const projectCards = [...projectsGrid.querySelectorAll('.project-card')];
 
-for(let i = 0; i < projectCards.length; i++) {
-  const expandBtn = projectCards[i].querySelector('.expand-btn');
-  console.log(expandBtn)
-  const cardDetails = projectCards[i].querySelector('.project-details');
-  expandBtn.addEventListener('click', () => handleDetailsDisplay(cardDetails, expandBtn));
-  if (i !== 0 && i % 2 !== 0) {
-    projectCards[i].addEventListener('mouseover', () => collapsePrevSibling(i));
-    projectCards[i].addEventListener('mouseout', () => resetPrevSibling(i));
-  }
-}
+// for(let i = 0; i < projectCards.length; i++) {
+//   const expandBtn = projectCards[i].querySelector('.expand-btn');
+//   console.log(expandBtn)
+//   const cardDetails = projectCards[i].querySelector('.project-details');
+//   expandBtn.addEventListener('click', () => handleDetailsDisplay(cardDetails, expandBtn));
+//   if (i !== 0 && i % 2 !== 0) {
+//     projectCards[i].addEventListener('mouseover', () => collapsePrevSibling(i));
+//     projectCards[i].addEventListener('mouseout', () => resetPrevSibling(i));
+//   }
+// }
 
-function collapsePrevSibling(i) {
-  if (window.innerWidth >= 768) {
-    projectCards[i - 1].style.width = '10%';
-  }
-}
+// function collapsePrevSibling(i) {
+//   if (window.innerWidth >= 768) {
+//     projectCards[i - 1].style.width = '10%';
+//   }
+// }
 
-function resetPrevSibling(i) {
-  if (window.innerWidth >= 768) {
-    projectCards[i - 1].style.width = '';
-  }
-}
+// function resetPrevSibling(i) {
+//   if (window.innerWidth >= 768) {
+//     projectCards[i - 1].style.width = '';
+//   }
+// }
 
-function handleDetailsDisplay(cardDetails, expandBtn) {
-  if (cardDetails.style.maxHeight) {
-    cardDetails.style.maxHeight = null;
-    expandBtn.innerText = `+`;
-  } else {
-    cardDetails.style.maxHeight = cardDetails.scrollHeight + 'px';
-    expandBtn.innerHTML = `-`;
-  }
-}
+// function handleDetailsDisplay(cardDetails, expandBtn) {
+//   if (cardDetails.style.maxHeight) {
+//     cardDetails.style.maxHeight = null;
+//     expandBtn.innerText = `+`;
+//   } else {
+//     cardDetails.style.maxHeight = cardDetails.scrollHeight + 'px';
+//     expandBtn.innerHTML = `-`;
+//   }
+// }

@@ -33,7 +33,10 @@
   height: 300px;
   overflow: hidden;
   display: flex;
-  transition: width 0.3s ease-out;
+  transition: width 0.4s ease-out;
+  -webkit-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
 }
 
 .project-header {
@@ -75,7 +78,6 @@
   width: 100%;
   height: 70%;
   overflow: hidden;
-  background-image: url("../images/vocabit_thumbnail.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -133,6 +135,26 @@
   display: none;
 }
 
+.project-details p {
+  margin: 1rem 0;
+}
+
+.project-role {
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.project-stack {
+  font-weight: 700;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
 @media screen and (max-width: 768px) {
   .projects-grid {
     justify-content: center;
@@ -151,6 +173,9 @@
     max-height: 0;
     transition: max-height 0.3s ease-out;
   }
+  .project-details.active {
+    padding: 1rem;
+  }
   .project-thumbnail {
     max-width: 100%;
     height: 270px;
@@ -160,6 +185,9 @@
     justify-content: center;
     width: 100%;
     font-size: 1rem;
+  }
+  .details-header {
+    flex-direction: column;
   }
 }
 @media screen and (min-width: 768px) {

@@ -3,6 +3,9 @@
 ! update projects section
   + toggle collapse icon on mobile screen
   - style details section
-  - dynamically populate projects
+  + dynamically populate projects
+  + collapse all the other cards on expand btn click (mobile)
+  - decrease font-size of title of the collapsed card
+  + add icons for expand buttons
 - optimization
 - load CV button
