@@ -2,10 +2,13 @@
 - update skills
 ! update projects section
   + toggle collapse icon on mobile screen
-  - style details section
+  ! style details section
+    + customize collapse buttons
   + dynamically populate projects
   + collapse all the other cards on expand btn click (mobile)
-  - decrease font-size of title of the collapsed card
+  + decrease font-size of title of the collapsed card
   + add icons for expand buttons
+  + add stack icons
+  + reimplement tooltips 
 - optimization
 - load CV button

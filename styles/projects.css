@@ -95,6 +95,10 @@
   text-decoration: none;
   color: hsl(246, 100%, 4%);
   height: 5rem;
+  transition: font-size 0.3s ease-out;
+}
+.project-title a {
+  color: black;
 }
 
 .project-card:hover .project-title {
@@ -109,7 +113,7 @@
   padding: 8px 12px;
   border-radius: 6px;
   position: absolute;
-  top: -120%;
+  top: 100%;
   transform: translateX(-50%);
   left: 50%;
 }
@@ -118,11 +122,11 @@
   content: "";
   display: block;
   position: absolute;
-  top: 100%;
+  top: -15%;
   transform: translateX(-50%);
   left: 50%;
   background-color: transparent;
-  border-top: 5px solid hsl(246, 100%, 4%);
+  border-bottom: 5px solid hsl(246, 100%, 4%);
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
 }
@@ -142,10 +146,16 @@
 .project-role {
   text-transform: capitalize;
   font-style: italic;
+  font-weight: bold;
 }
 
 .project-stack {
-  font-weight: 700;
+  display: flex;
+  gap: 0.5rem;
+}
+.project-stack img {
+  width: 2rem;
+  height: 2rem;
 }
 
 .details-header {
@@ -184,7 +194,13 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    padding: 5px;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  .expand-btn:hover {
+    background-color: hsl(0, 0%, 90%);
   }
   .details-header {
     flex-direction: column;
@@ -196,6 +212,9 @@
   }
   .project-card:nth-child(odd):hover + .project-card {
     width: 10%;
+  }
+  .project-card:nth-child(odd):hover + .project-card .project-title {
+    font-size: 1rem;
   }
   .project-card:nth-child(even):hover {
     width: 80%;

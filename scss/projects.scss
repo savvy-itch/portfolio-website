@@ -73,22 +73,10 @@ $font-color: hsl(246, 100%, 4%);
   width: 100%;
   height: 70%;
   overflow: hidden;
-  // background-image: url('../images/vocabit_thumbnail.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-
-// .thumbnail-wrapper img {
-//   min-height: 100%;
-//   max-width: 100%;
-// }
-
-// .project-thumbnail img {
-//   max-width: 100%;
-//   transform: scale(1.07);
-//   transition: .2s;
-// }
 
 .project-title {
   @include flex-center;
@@ -100,13 +88,16 @@ $font-color: hsl(246, 100%, 4%);
   text-decoration: none;
   color: $font-color;
   height: 5rem;
+  transition: font-size .3s ease-out;
+  
+  a {
+    color: black;
+  }
 }
 .project-card:hover .project-title {
   text-decoration: underline;
 }
-// .project-card:hover .project-thumbnail img {
-//   transform: scale(1.14);
-// }
+
 .tooltip {
   background-color: $tooltip-bg;
   color: $tooltip-text;
@@ -115,7 +106,7 @@ $font-color: hsl(246, 100%, 4%);
   padding: 8px 12px;
   border-radius: 6px;
   position: absolute;
-  top: -120%;
+  top: 100%;
   transform: translateX(-50%);
   left: 50%;
 }
@@ -123,11 +114,11 @@ $font-color: hsl(246, 100%, 4%);
   content: '';
   display: block;
   position: absolute;
-  top: 100%;
+  top: -15%;
   transform: translateX(-50%);
   left: 50%;
   background-color: transparent;
-  border-top: 5px solid $tooltip-bg;
+  border-bottom: 5px solid $tooltip-bg;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
 }
@@ -148,10 +139,17 @@ $font-color: hsl(246, 100%, 4%);
 .project-role {
   text-transform: capitalize;
   font-style: italic;
+  font-weight: bold;
 }
 
 .project-stack {
-  font-weight: 700;
+  display: flex;
+  gap: .5rem;
+
+  img {
+    width: 2rem;
+    height: 2rem;
+  }
 }
 
 .details-header {
@@ -195,7 +193,14 @@ $font-color: hsl(246, 100%, 4%);
     display: flex;
     justify-content: center;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    padding: 5px;
+    border: none;
+    transition: background-color .3s;
+  }
+
+  .expand-btn:hover {
+    background-color: hsl(0, 0%, 90%);
   }
 
   .details-header {
@@ -212,6 +217,10 @@ $font-color: hsl(246, 100%, 4%);
   // collapse right card when left one is expanded
   .project-card:nth-child(odd):hover + .project-card {
     width: 10%;
+    
+    .project-title {
+      font-size: 1rem;
+    }
   }
 
   // expand right card

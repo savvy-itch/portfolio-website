@@ -1,4 +1,5 @@
 import { projects } from "./projects.js";
+import { stackIcons } from "./stackIcons.js";
 
 const projectsGrid = document.getElementById('projects-grid');
 
@@ -8,7 +9,6 @@ function populateGrid() {
   for (let i = 0; i < projects.length; i++) {
     if (projectsGrid) {
       const card = createProjectCard(projects[i]);
-      populateStack(card, i);
       projectsGrid.appendChild(card);
     }
   }
@@ -33,7 +33,7 @@ function createProjectCard(project) {
     </button>
     <div class="project-details">
       <div class="details-header">
-        <p class="project-stack">Stack</p>
+        <div class="project-stack"></div>
         <a class="project-code-link" href=${project.codeUrl} target="_blank" rel="noopener noreferrer">
           View Code
         </a>
@@ -49,6 +49,7 @@ function applyEvents() {
   const projectCards = [...projectsGrid.querySelectorAll('.project-card')];
 
   for(let i = 0; i < projectCards.length; i++) {
+    populateStack(projectCards[i], i);
     const expandBtn = projectCards[i].querySelector('.expand-btn');
     const cardDetails = projectCards[i].querySelector('.project-details');
     expandBtn.addEventListener('click', () => handleDetailsDisplay(cardDetails, expandBtn, projectCards, projectCards[i].getAttribute('name')));
@@ -61,14 +62,17 @@ function applyEvents() {
 
 function collapsePrevSibling(i, projectCards) {
   if (window.innerWidth >= 768) {
-    console.log('>768')
     projectCards[i - 1].style.width = '10%';
+    const projectTitle = projectCards[i-1].querySelector('.project-title');
+    projectTitle.style.fontSize = '1rem';
   }
 }
 
 function resetPrevSibling(i, projectCards) {
   if (window.innerWidth >= 768) {
-    projectCards[i - 1].style.width = '';
+    projectCards[i-1].style.width = '';
+    const projectTitle = projectCards[i-1].querySelector('.project-title');
+    projectTitle.style.fontSize = '';
   }
 }
 
@@ -100,13 +104,30 @@ function collapseOtherCards(projectCards, name) {
 
 function populateStack(card, idx) {
   const stackElem = card.querySelector('.project-stack');
-  let stackList = '';
   for (let i = 0; i < projects[idx].stack.length; i++) {
-    if (i === 0) {
-      stackList += projects[idx].stack[i];
-    } else {
-      stackList += `, ${projects[idx].stack[i]}`;
-    }
+    const iconUrl = stackIcons.find(el => el.name === projects[idx].stack[i]).icon;
+    const iconWrapper = document.createElement('div');
+    iconWrapper.classList.add('icon-wrapper');
+    iconWrapper.innerHTML = `
+      <img src=${iconUrl} alt=${projects[idx].stack[i]} data-tech=${projects[idx].stack[i]} />
+    `;
+    iconWrapper.addEventListener('mouseenter', (e) => displayTooltip(e));
+    iconWrapper.addEventListener('mouseleave', (e) => hideTooltip(e));
+    stackElem.appendChild(iconWrapper);
   }
-  stackElem.innerText = stackList;
+}
+
+function displayTooltip(e) {
+  if (e.currentTarget.classList.contains('icon-wrapper')) {
+    const tooltip = document.createElement('div');
+    tooltip.classList.add('tooltip');
+    tooltip.innerText = e.currentTarget.querySelector('img').dataset.tech;
+    e.currentTarget.appendChild(tooltip);
+  }
+}
+
+function hideTooltip(e) {
+  const iconWrapper = e.target;
+  const tooltip = iconWrapper.querySelector('.tooltip');
+  iconWrapper.removeChild(tooltip);
 }
