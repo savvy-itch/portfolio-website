@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/projects.css">
+  <link rel="stylesheet" href="./styles/footer.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon.ico">
   <title>Michael Savych Portfolio</title>
 </head>
@@ -18,6 +19,9 @@
           <button class="nav-toggle">
             <i class="fas fa-bars"></i>
           </button>
+          <a class="cv-file" href="" download target="_blank" rel="noopener noreferrer" title="Download CV">
+            <i class="fa-solid fa-file-pdf"></i>
+          </a>
         </div>
         <ul class="nav-links">
           <li>
@@ -33,6 +37,9 @@
             <a class="nav-menu-link" href="#footer-section">Contact</a>
           </li>
         </ul>
+        <a class="cv-file" href="" download target="_blank" rel="noopener noreferrer" title="Download CV">
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
       </div>
     </nav>
   </header>
@@ -55,7 +62,7 @@
         <div class="skills-grid">
           <div class="grid-row">
             <div class="hardskills">
-              <p>Building responsive websites using HTML5, CSS3/Sass/SCSS, JavaScript(ES6+), TypeScript, React.js, Node.js/Express, MongoDB, Jest, Bootstrap, Tailwind</p>
+              <p>Building responsive websites using HTML, CSS/SCSS, JavaScript, TypeScript, React, Node/Express, MongoDB, Bootstrap, Tailwind</p>
             </div>
           </div>
           <div class="grid-row">
@@ -106,16 +113,29 @@
   <footer>
     <section id="footer-section" class="footer-section">
       <div class="container footer">
-        <h2 class="contact-heading">Let's work together</h2>
-        <div class="contact-column">
-          <p>Contact</p>
+        <div>
+          <h2 class="contact-heading">Let's work together</h2>
           <div class="social-links">
-            <a href="mailto: sprone3@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-            <a href="https://github.com/savvy-itch" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/михайло-савич-a31366248/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://t.me/sprone13" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://github.com/savvy-itch" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/михайло-савич-a31366248/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://t.me/sprone13" target="_blank" rel="noopener noreferrer" title="Telegram">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
           </div>
         </div>
+        <form class="contact-form" name="contact" method="POST" netlify>
+          <input type="hidden" name="form-name" value="contact">
+          <div class="sender-info">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+          </div>
+          <textarea class="sender-message" name="message" placeholder="Write me your message here..." required></textarea>
+          <button class="send-msg-btn" type="submit">Send</button>
+        </form>
       </div>
     </section>
   </footer>

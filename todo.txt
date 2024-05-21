@@ -9,6 +9,9 @@
   + decrease font-size of title of the collapsed card
   + add icons for expand buttons
   + add stack icons
-  + reimplement tooltips 
+  + reimplement tooltips
 - optimization
-- load CV button
++ load CV button
+- other languages
++ add email contact form
+- add dark and light font vars
