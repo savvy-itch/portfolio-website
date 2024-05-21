@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'globals';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 * {
@@ -45,7 +46,7 @@ body {
   transition: .2s;
 }
 .nav-menu-link {
-  color: white;
+  color: $light-text;
   text-decoration: none;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -75,7 +76,7 @@ body {
   border-color: transparent;
   transition: .2s;
   cursor: pointer;
-  color: white;
+  color: $light-text;
 }
 .show-links {
   height: 10rem;
@@ -88,7 +89,7 @@ body {
   min-height: 100vh;
 }
 .hero-section span {
-  color: white;
+  color: $light-text;
 }
 .name-heading {
   font-weight: bold;
@@ -105,7 +106,7 @@ h3 {
   
 .cv-file {
   font-size: 2.5rem;
-  color: white;
+  color: $light-text;
 }
 
 .name-heading {
@@ -146,7 +147,7 @@ h3 {
   justify-content: center;
 }
 .about-para {
-  color: white;
+  color: $light-text;
   font-size: 1.3rem;
   max-width: 60%;
 }
@@ -162,7 +163,7 @@ h3 {
 }
 .hardskills,
 .softskills {
-  color: white;
+  color: $light-text;
   padding: 1rem;
   border-radius: 18px;
   font-size: 1.1rem;

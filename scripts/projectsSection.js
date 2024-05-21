@@ -34,9 +34,14 @@ function createProjectCard(project) {
     <div class="project-details">
       <div class="details-header">
         <div class="project-stack"></div>
-        <a class="project-code-link" href=${project.codeUrl} target="_blank" rel="noopener noreferrer">
-          View Code
-        </a>
+        <div class="project-links">
+          <a class="project-code-link" href=${project.codeUrl} target="_blank" rel="noopener noreferrer">
+            View Code <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a class="project-code-link" href=${project.demoUrl} target="_blank" rel="noopener noreferrer">
+            Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
       </div>
       <p class="project-role">${project.role}</p>
       <p>${project.desc}</p>

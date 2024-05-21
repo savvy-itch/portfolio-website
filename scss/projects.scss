@@ -1,8 +1,7 @@
 @import 'mixins';
+@import 'globals';
 
 $tooltip-bg: hsl(246, 100%, 4%);
-$tooltip-text: white;
-$font-color: hsl(246, 100%, 4%);
 
 .projects-section {
   @include flex-justify-around;
@@ -28,7 +27,7 @@ $font-color: hsl(246, 100%, 4%);
 }
 .project-card {
   background-color: #ccc;
-  border: 1px solid $font-color;
+  border: 1px solid $dark-text;
   border-radius: 12px;
   width: 45%;
   max-width: 80%;
@@ -56,7 +55,7 @@ $font-color: hsl(246, 100%, 4%);
   height: 25px;
 }
 .project-code-link {
-  color: $font-color;
+  color: $dark-text;
   font-size: .8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -86,21 +85,34 @@ $font-color: hsl(246, 100%, 4%);
   text-align: center;
   font-weight: 700;
   text-decoration: none;
-  color: $font-color;
   height: 5rem;
   transition: font-size .3s ease-out;
   
   a {
-    color: black;
+    color: $dark-text;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      width: 0;
+      background-color: $dark-text;
+      transition: width .3s ease-out;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
   }
-}
-.project-card:hover .project-title {
-  text-decoration: underline;
 }
 
 .tooltip {
   background-color: $tooltip-bg;
-  color: $tooltip-text;
+  color: $light-text;
   text-transform: uppercase;
   font-size: .7rem;
   padding: 8px 12px;
@@ -130,8 +142,19 @@ $font-color: hsl(246, 100%, 4%);
   display: none;
 }
 
+.project-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  i {
+    font-size: .7rem;
+  }
+}
+
 .project-details {
   p {
+    color: $dark-text;
     margin: 1rem 0;
   }
 }
@@ -171,6 +194,10 @@ $font-color: hsl(246, 100%, 4%);
     height: auto;
     min-height: 300px;
     flex-direction: column;
+  }
+
+  .project-links {
+    flex-direction: row;
   }
   
   .project-details {

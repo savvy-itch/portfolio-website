@@ -10,8 +10,8 @@
   + add icons for expand buttons
   + add stack icons
   + reimplement tooltips
-- optimization
+! optimization
 + load CV button
 - other languages
 + add email contact form
-- add dark and light font vars
++ add dark and light font vars

@@ -50,7 +50,7 @@ body {
 }
 
 .nav-menu-link {
-  color: white;
+  color: #fffce4;
   text-decoration: none;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -84,7 +84,7 @@ body {
   border-color: transparent;
   transition: 0.2s;
   cursor: pointer;
-  color: white;
+  color: #fffce4;
 }
 
 .show-links {
@@ -101,7 +101,7 @@ body {
 }
 
 .hero-section span {
-  color: white;
+  color: #fffce4;
 }
 
 .name-heading {
@@ -121,7 +121,7 @@ h3 {
 
 .cv-file {
   font-size: 2.5rem;
-  color: white;
+  color: #fffce4;
 }
 
 .name-heading {
@@ -166,7 +166,7 @@ h3 {
 }
 
 .about-para {
-  color: white;
+  color: #fffce4;
   font-size: 1.3rem;
   max-width: 60%;
 }
@@ -185,7 +185,7 @@ h3 {
 
 .hardskills,
 .softskills {
-  color: white;
+  color: #fffce4;
   padding: 1rem;
   border-radius: 18px;
   font-size: 1.1rem;
