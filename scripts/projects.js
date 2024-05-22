@@ -50,7 +50,7 @@ export const projects = [
       'CSS',
     ],
     role: 'frontend',
-    img: '../images/fairy_run.jpg',
+    img: '../images/fairy_run.webp',
     imgAlt: 'fairy run',
     demoUrl: 'https://savvy-itch.github.io/fairy-run/',
     codeUrl: 'https://github.com/savvy-itch/fairy-run',

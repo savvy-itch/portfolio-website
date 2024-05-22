@@ -144,7 +144,8 @@ h3 {
 }
 .bg-code-wrapper {
   width: 45%;
-  background-image: url(/images/hero_bg.png);
+  max-width: 630px;
+  background-image: url(/images/hero_bg.webp);
   background-repeat: no-repeat;
   align-self: stretch;
   background-size: cover;

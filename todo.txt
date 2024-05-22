@@ -1,8 +1,8 @@
 - add "other activity" section
 - update skills
-! update projects section
++ update projects section
   + toggle collapse icon on mobile screen
-  ! style details section
+  + style details section
     + customize collapse buttons
   + dynamically populate projects
   + collapse all the other cards on expand btn click (mobile)
@@ -10,7 +10,7 @@
   + add icons for expand buttons
   + add stack icons
   + reimplement tooltips
-! optimization
++ optimization
 + load CV button
 - other languages
 + add email contact form
