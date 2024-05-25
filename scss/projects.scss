@@ -1,6 +1,10 @@
 @import 'mixins';
 @import 'globals';
 
+@include roboto-bold;
+@include roboto-bold-italic;
+@include roboto-regular;
+
 $tooltip-bg: hsl(246, 100%, 4%);
 
 .projects-section {
@@ -8,9 +12,9 @@ $tooltip-bg: hsl(246, 100%, 4%);
   flex-direction: column;
 }
 .projects-heading {
+  font-family: 'Roboto-Bold', sans-serif;
   color: hsl(47, 80%, 60%);
   font-size: 3rem;
-  font-weight: 700;
 }
 .projects-grid {
   display: flex;
@@ -20,10 +24,6 @@ $tooltip-bg: hsl(246, 100%, 4%);
   align-items: center;
   margin: 1.5rem 0;
   width: 100%;
-
-  a {
-    text-decoration: none;
-  }
 }
 .project-card {
   background-color: #ccc;
@@ -38,22 +38,21 @@ $tooltip-bg: hsl(246, 100%, 4%);
   -webkit-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.75);
+
+  a {
+    text-decoration: none;
+  }
 }
 
-.project-header {
-  @include flex-justify-between;
-  padding: 1rem;
-  font-size: 1.6rem;
-  border-bottom: 2px solid #191d32;
+.project-card-skeleton {
+  background-color: #ccc;
+  border: 1px solid $dark-text;
+  border-radius: 12px;
+  width: 45%;
+  max-width: 80%;
+  height: 300px;
 }
-.project-header-icons-wrapper {
-  display: flex;
-  gap: 5px;
-}
-.icon-img {
-  position: relative;
-  height: 25px;
-}
+
 .project-code-link {
   color: $dark-text;
   font-size: .8rem;
@@ -68,49 +67,51 @@ $tooltip-bg: hsl(246, 100%, 4%);
   overflow: hidden;
 }
 
-.thumbnail-wrapper {
-  width: 100%;
-  height: 70%;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+// moved to HTML
+// .thumbnail-wrapper {
+//   width: 100%;
+//   height: 70%;
+//   overflow: hidden;
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+// }
 
 .project-title {
   @include flex-center;
+  font-family: 'Roboto-Bold', sans-serif;
   padding: 1rem;
   font-size: 1.6rem;
   border-top: 2px solid #191d32;
   text-align: center;
-  font-weight: 700;
   text-decoration: none;
   height: 5rem;
   transition: font-size .3s ease-out;
-  
-  a {
-    color: $dark-text;
-    position: relative;
+}
 
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 2px;
-      width: 0;
-      background-color: $dark-text;
-      transition: width .3s ease-out;
-    }
+.project-title > a {
+  color: $dark-text;
+  position: relative;
+}
 
-    &:hover::before {
-      width: 100%;
-    }
-  }
+.project-title > a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background-color: $dark-text;
+  transition: width .3s ease-out;
+}
+
+.project-title > a:hover::before {
+  width: 100%;
 }
 
 .tooltip {
+  font-family: 'Roboto-Regular', sans-serif;
   background-color: $tooltip-bg;
   color: $light-text;
   text-transform: uppercase;
@@ -138,21 +139,31 @@ $tooltip-bg: hsl(246, 100%, 4%);
   position: relative;
 }
 
+.icon-wrapper > img {
+  width: 2rem;
+  height: 2rem;
+}
+
 .expand-btn {
   display: none;
 }
 
 .project-links {
+  font-family: 'Roboto-Bold', sans-serif;
   display: flex;
   flex-direction: column;
   gap: 12px;
 
-  i {
-    font-size: .7rem;
+  img {
+    width: .7rem;
+    height: .7rem;
   }
 }
 
 .project-details {
+  opacity: 0;
+  transition: opacity .6s ease-out;
+
   p {
     color: $dark-text;
     margin: 1rem 0;
@@ -160,19 +171,17 @@ $tooltip-bg: hsl(246, 100%, 4%);
 }
 
 .project-role {
+  font-family: 'Roboto-Bold-Italic', sans-serif;
   text-transform: capitalize;
-  font-style: italic;
-  font-weight: bold;
 }
 
 .project-stack {
   display: flex;
   gap: .5rem;
+}
 
-  img {
-    width: 2rem;
-    height: 2rem;
-  }
+.project-desc {
+  font-family: 'Roboto-Regular', sans-serif;
 }
 
 .details-header {
@@ -182,63 +191,14 @@ $tooltip-bg: hsl(246, 100%, 4%);
   gap: 1rem;
 }
 
-@media screen and (max-width: 768px) {
-  .projects-grid {
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .project-card {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 300px;
-    flex-direction: column;
-  }
-
-  .project-links {
-    flex-direction: row;
-  }
-  
-  .project-details {
-    width: 100%;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height .3s ease-out;
-  }
-
-  .project-details.active {
-    padding: 1rem;
-  }
-
-  .project-thumbnail {
-    max-width: 100%;
-    height: 270px;
-  }
-
-  .expand-btn {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-size: 1.1rem;
-    padding: 5px;
-    border: none;
-    transition: background-color .3s;
-  }
-
-  .expand-btn:hover {
-    background-color: hsl(0, 0%, 90%);
-  }
-
-  .details-header {
-    flex-direction: column;
-  } 
-}
-
 @media screen and (min-width: 768px) {
   // expand left card
   .project-card:nth-child(odd):hover {
     width: 80%;
+
+    .project-details {
+      opacity: 1;
+    }
   }
 
   // collapse right card when left one is expanded
@@ -254,6 +214,10 @@ $tooltip-bg: hsl(246, 100%, 4%);
   // left card collapse is done with JS
   .project-card:nth-child(even):hover {
     width: 80%;
+
+    .project-details {
+      opacity: 1;
+    }
   }
 
   .project-card:hover {
@@ -269,5 +233,72 @@ $tooltip-bg: hsl(246, 100%, 4%);
 
   .project-details {
     width: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    margin: 1.5rem 0;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 300px;
+    flex-direction: column;
+  }
+
+  .project-card-skeleton {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .project-links {
+    flex-direction: row;
+  }
+  
+  .project-details {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .3s ease-out, opacity .5s ease-out;
+  }
+
+  .project-details.active {
+    padding: 1rem;
+    opacity: 1;
+  }
+
+  .project-thumbnail {
+    max-width: 100%;
+    height: 270px;
+  }
+
+  .expand-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    transition: background-color .3s;
+  }
+  
+  .expand-btn > img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .expand-btn:hover {
+    background-color: hsl(0, 0%, 90%);
+  }
+
+  .details-header {
+    flex-direction: column;
   }
 }

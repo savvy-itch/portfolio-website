@@ -1,0 +1,98 @@
+@import 'mixins';
+@import 'globals';
+@include roboto-regular;
+@include roboto-bold;
+
+.about-section {
+  min-height: calc(100vh + var(--navbar-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-para {
+  font-family: 'Roboto-Regular', sans-serif;
+  color: $light-text;
+  font-size: 1.3rem;
+  max-width: 60%;
+}
+.about-heading {
+  font-family: 'Roboto-Bold', sans-serif;
+  color: hsl(47, 80%, 60%);
+  font-size: 3rem;
+}
+.grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+}
+.hardskills,
+.softskills {
+  font-family: 'Roboto-Regular', sans-serif;
+  color: $light-text;
+  padding: 1rem;
+  border-radius: 18px;
+  font-size: 1.1rem;
+  box-shadow: 10px 10px 22px 4px rgba(0,0,0,0.45);
+  text-align: center;
+}
+.hardskills {
+  background-color: #364156;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  transform: translateX(200%);
+}
+.skills-grid.animate-skills .hardskills {
+  animation-name: right-roll-out;
+  animation-fill-mode: forwards;
+  animation-duration: .7s;
+}
+.skills-grid.animate-skills .softskills {
+  animation-name: left-roll-out;
+  animation-fill-mode: forwards;
+  animation-duration: .7s;
+}
+
+@keyframes right-roll-out {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.softskills {
+  background-color: #7d4e57;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  transform: translateX(-200%);
+}
+@keyframes left-roll-out {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.grid-row:nth-of-type(2n) .softskills {
+  animation-delay: 0.5s;
+}
+.grid-row:nth-of-type(3n) .hardskills {
+  animation-delay: 0.9s;
+}
+.grid-row:nth-of-type(4n) .softskills {
+  animation-delay: 1.3s;
+}
+.grid-row:nth-of-type(5n) .hardskills {
+  animation-delay: 1.7s;
+}
+.grid-row:nth-of-type(6n) .softskills {
+  animation-delay: 2.1s;
+}
+.grid-row:nth-of-type(7n) .hardskills {
+  animation-delay: 2.4s;
+}
+.grid-row:nth-of-type(8n) .softskills {
+  animation-delay: 2.9s;
+}

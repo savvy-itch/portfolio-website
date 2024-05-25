@@ -1,6 +1,9 @@
 @import 'mixins';
 @import 'globals';
 
+@include roboto-bold;
+@include roboto-italic;
+
 .footer-section {
   border-top: 2px solid hsl(0, 0%, 73%);
 }
@@ -9,9 +12,9 @@
   padding: 2rem 0;
 }
 .contact-heading {
+  font-family: 'Roboto-Bold', sans-serif;
   color: hsl(47, 80%, 60%);
   font-size: 2rem;
-  font-weight: 700;
 }
 .contact-column p {
   text-align: end;
@@ -33,15 +36,17 @@
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 2rem;
+}
 
-  input {
-    @include form-styles;
-    font-size: 1.3rem;
-  }
+.sender-info > input {
+  @include form-styles;
+  font-family: 'Roboto-Italic', sans-serif;
+  font-size: 1.3rem;
 }
 
 .sender-message {
   @include form-styles;
+  font-family: 'Roboto-Italic', sans-serif;
   width: 100%;
   height: 100px;
   font-size: 1.2rem;
@@ -93,7 +98,7 @@
   gap: 12px;
   margin-top: 1rem;
 }
-.social-links a {
+.social-links > a {
   @include flex-center;
   font-size: 1.5rem;
   margin: .2rem;
@@ -105,8 +110,13 @@
   text-decoration: none;
   transition: .2s;
 }
-.social-links a:hover {
+.social-links > a:hover {
   background-color: hsl(47, 80%, 60%);
+}
+
+.social-links img {
+  width: 22px;
+  height: 22px;
 }
 
 @media screen and (max-width: 968px) {
@@ -117,29 +127,5 @@
   }
   .social-links {
     justify-content: center;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .sender-info input {
-    font-size: 1.1rem;
-  }
-  
-  .sender-message {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 568px) {
-  .contact-heading {
-    font-size: 1.5rem;
-  }
-  .contact-column p {
-    font-size: 1.1rem;
-    margin: 1rem 0;
-    text-align: center;
-  }
-  .sender-info {
-    flex-direction: column;
   }
 }

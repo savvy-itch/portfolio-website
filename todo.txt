@@ -15,3 +15,4 @@
 - other languages
 + add email contact form
 + add dark and light font vars
+- split style.css on style.css and about.css

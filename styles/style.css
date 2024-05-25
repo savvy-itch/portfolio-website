@@ -1,9 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@font-face {
+  font-family: "Roboto-Regular";
+  src: local("Roboto-Regular"), url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto-Light";
+  src: local("Roboto-Light"), url("../fonts/Roboto-Light.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: local("Roboto-Bold"), url("../fonts/Roboto-Bold.woff2") format("woff2");
+  font-display: swap;
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -50,6 +63,7 @@ body {
 }
 
 .nav-menu-link {
+  font-family: "Roboto-Regular", sans-serif;
   color: #fffce4;
   text-decoration: none;
   font-size: 1.2rem;
@@ -78,15 +92,6 @@ body {
   visibility: visible;
 }
 
-.nav-toggle {
-  font-size: 1.8rem;
-  background: transparent;
-  border-color: transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  color: #fffce4;
-}
-
 .show-links {
   height: 10rem;
 }
@@ -105,23 +110,18 @@ body {
 }
 
 .name-heading {
-  font-weight: bold;
+  font-family: "Roboto-Bold", sans-serif;
   font-size: 3.5rem;
 }
 
 .occupation-heading {
-  font-weight: lighter;
+  font-family: "Roboto-Light", sans-serif;
   font-size: var(--font-size);
 }
 
-h3 {
-  display: flex;
-  position: relative;
-}
-
-.cv-file {
-  font-size: 2.5rem;
-  color: #fffce4;
+.cv-file > img {
+  width: 2rem;
+  height: 2rem;
 }
 
 .name-heading {
@@ -142,23 +142,10 @@ h3 {
     opacity: 0;
   }
 }
-.bg-code-wrapper {
-  width: 45%;
-  max-width: 630px;
-  background-image: url(/images/hero_bg.webp);
-  background-repeat: no-repeat;
-  align-self: stretch;
-  background-size: cover;
-  filter: opacity(0.4) brightness(0.6);
-  background-attachment: fixed;
-  background-position: left;
-}
-
 .name-div {
   width: 45%;
 }
 
-/* =========== About Section ========== */
 .about-section {
   min-height: calc(100vh + var(--navbar-height));
   display: flex;
@@ -167,15 +154,16 @@ h3 {
 }
 
 .about-para {
+  font-family: "Roboto-Regular", sans-serif;
   color: #fffce4;
   font-size: 1.3rem;
   max-width: 60%;
 }
 
 .about-heading {
+  font-family: "Roboto-Bold", sans-serif;
   color: hsl(47, 80%, 60%);
   font-size: 3rem;
-  font-weight: 700;
 }
 
 .grid-row {
@@ -186,6 +174,7 @@ h3 {
 
 .hardskills,
 .softskills {
+  font-family: "Roboto-Regular", sans-serif;
   color: #fffce4;
   padding: 1rem;
   border-radius: 18px;
@@ -296,92 +285,6 @@ h3 {
   }
   .projects-grid {
     margin: 1rem 0;
-  }
-}
-@media screen and (max-width: 768px) {
-  .container {
-    max-width: 576px;
-  }
-  .nav-center {
-    display: block;
-    height: auto;
-  }
-  .cv-file {
-    display: none;
-  }
-  .nav-header {
-    display: flex;
-    justify-content: space-between;
-  }
-  .nav-header .cv-file {
-    display: block;
-  }
-  .nav-links {
-    display: block;
-    overflow: hidden;
-    height: 0;
-    margin-top: 0.8rem;
-  }
-  .nav-links > li {
-    margin: 0.4rem 0;
-  }
-  .show-links {
-    height: 10rem;
-  }
-  .name-heading {
-    font-size: 2.5rem;
-  }
-  .download-div {
-    width: 30%;
-  }
-  .hero-section {
-    --font-size: 1.4rem;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .bg-code-wrapper {
-    height: 40dvh;
-    width: 100%;
-    order: 2;
-  }
-  .name-div {
-    width: auto;
-    max-width: 100%;
-    width: auto;
-    margin-bottom: 2rem;
-  }
-  .about-para {
-    max-width: 100%;
-    font-size: 1.2rem;
-  }
-  .about-heading,
-  .projects-heading {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-  .grid-row {
-    grid-template-columns: 1fr;
-    margin: 0.7rem 0;
-    padding: 0 3rem;
-  }
-  .softskills,
-  .hardskills {
-    grid-column-start: 1;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-    margin: 1.5rem 0;
-  }
-}
-@media screen and (max-width: 568px) {
-  .container {
-    max-width: 100%;
-    padding: 0 0.8rem;
-  }
-  .name-heading,
-  .about-heading,
-  .projects-heading {
-    font-size: 2rem;
   }
 }
 

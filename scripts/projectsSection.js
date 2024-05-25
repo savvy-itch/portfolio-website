@@ -6,6 +6,7 @@ const projectsGrid = document.getElementById('projects-grid');
 document.addEventListener('DOMContentLoaded', populateGrid);
 
 function populateGrid() {
+  projectsGrid.innerHTML = ``;
   for (let i = 0; i < projects.length; i++) {
     if (projectsGrid) {
       const card = createProjectCard(projects[i]);
@@ -21,30 +22,32 @@ function createProjectCard(project) {
   card.setAttribute('name', project.name);
   card.innerHTML = `
     <div class="project-thumbnail">
-      <div style="background-image: url(${project.img})" class="thumbnail-wrapper"></div>
+      <div style="background-image: url(${project.img})" class="thumbnail-wrapper">
+        <img src=${project.img} alt="" width="0" height="0" style="display: none !important;" />
+      </div>
       <div class="project-title">
         <a href=${project.demoUrl} target="_blank" rel="noopener noreferrer">
           ${project.name}
         </a>
       </div>
     </div>
-    <button class="expand-btn">
-      <i class="fa-solid fa-chevron-down"></i>
+    <button class="expand-btn" title="expand button">
+      <img src="./images/icons/chevron-down-solid.svg" alt="expand icon" />
     </button>
     <div class="project-details">
       <div class="details-header">
         <div class="project-stack"></div>
         <div class="project-links">
           <a class="project-code-link" href=${project.codeUrl} target="_blank" rel="noopener noreferrer">
-            View Code <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            View Code <img src="./images/icons/link-icon.svg" alt="link icon" />
           </a>
           <a class="project-code-link" href=${project.demoUrl} target="_blank" rel="noopener noreferrer">
-            Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Live Demo <img src="./images/icons/link-icon.svg" alt="link icon" />
           </a>
         </div>
       </div>
       <p class="project-role">${project.role}</p>
-      <p>${project.desc}</p>
+      <p class="project-desc">${project.desc}</p>
     </div>
   `;
   return card;
@@ -85,11 +88,11 @@ function handleDetailsDisplay(cardDetails, expandBtn, projectCards, name) {
   cardDetails.classList.toggle('active');
   if (cardDetails.style.maxHeight) {
     cardDetails.style.maxHeight = null;
-    expandBtn.innerHTML = `<i class="fa-solid fa-chevron-down"></i>`;
+    expandBtn.innerHTML = `<img src="./images/icons/chevron-down-solid.svg" alt="expand icon" />`;
   } else {
     collapseOtherCards(projectCards, name);
     cardDetails.style.maxHeight = cardDetails.scrollHeight + 'px';
-    expandBtn.innerHTML = `<i class="fa-solid fa-chevron-up"></i>`;
+    expandBtn.innerHTML = `<img src="./images/icons/chevron-up.svg" alt="collapse icon" />`;
   }
 }
 
@@ -102,7 +105,7 @@ function collapseOtherCards(projectCards, name) {
         projectDetails.classList.toggle('active');
         const expandBtn = projectCards[i].querySelector('.expand-btn');
         projectDetails.style.maxHeight = null;
-        expandBtn.innerHTML = `<i class="fa-solid fa-chevron-down"></i>`;
+        expandBtn.innerHTML = `<img src="./images/icons/chevron-down-solid.svg" alt="expand icon" />`;
     }
   }
 }

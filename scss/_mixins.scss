@@ -21,3 +21,52 @@
   border-radius: 8px;
   font-style: italic;
 }
+
+@mixin roboto-regular {
+  @font-face {
+    font-family: 'Roboto-Regular';
+    src: local("Roboto-Regular"),
+         url("../fonts/Roboto-Regular.woff2") format("woff2");
+    font-display: swap;
+  }
+}
+
+@mixin roboto-italic {
+  @font-face {
+    font-family: 'Roboto-Italic';
+    src:
+      local("Roboto-Italic"),
+      url("../fonts/Roboto-Italic.woff2") format("woff2");
+    font-display: swap;
+  }
+}
+
+@mixin roboto-light {
+  @font-face {
+    font-family: 'Roboto-Light';
+    src:
+      local("Roboto-Light"),
+      url("../fonts/Roboto-Light.woff2") format("woff2");
+    font-display: swap;
+  }
+}
+
+@mixin roboto-bold {
+  @font-face {
+    font-family: 'Roboto-Bold';
+    src:
+      local("Roboto-Bold"),
+      url("../fonts/Roboto-Bold.woff2") format("woff2");
+    font-display: swap;
+  }
+}
+
+@mixin roboto-bold-italic {
+  @font-face {
+    font-family: 'Roboto-Bold-Italic';
+    src:
+      local("Roboto-Bold-Italic"),
+      url("../fonts/Roboto-BoldItalic.woff2") format("woff2");
+    font-display: swap;
+  }
+}

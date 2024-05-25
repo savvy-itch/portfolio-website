@@ -4,27 +4,75 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="My name is Michael and I'm a front-end developer. I specialize in building full-fledged websites for various businesses.">
-  <link rel="preload" fetchpriority="high" as="image" href="./images/hero_bg.webp" type="image/webp">
-  <script src="https://kit.fontawesome.com/7aaf041e47.js" crossorigin="anonymous"></script>
+  <meta name="description" content="My name is Michael and I'm a front-end developer. I specialize in building full-fledged, modern websites for various businesses.">
+
+  <link rel="preload" fetchpriority="high" as="image" href="./images/hero_bg.webp" type="image/webp" media="(min-width: 768px)">
+  <link rel="preload" fetchpriority="high" as="image" href="./images/hero_bg_small.webp" type="image/webp" media="(max-width: 768px)">
+  <link rel="preload" fetchpriority="high" as="image" href="./images/vocabit_thumbnail.webp" type="image/webp">
+
+  <link rel="preload" href="./fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/Roboto-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="preload" href="./styles/projects.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="./styles/projects.css"></noscript>
   <link rel="preload" href="./styles/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="./styles/footer.css"></noscript>
+  <link rel="stylesheet" href="./styles/small.css" media="(max-width: 768px)">
+
+  <link rel="preload" href="./scripts/projects.js" as="script" onload="this.onload=null;this.rel='script'">
+  
   <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon.ico">
   <title>Michael Savych Portfolio</title>
+  <style>
+    .bg-code-wrapper {
+      background-repeat: no-repeat;
+      align-self: stretch;
+      background-size: cover;
+      filter: opacity(0.4) brightness(0.6);
+      background-attachment: fixed;
+      background-position: left;
+    }
+
+    .thumbnail-wrapper {
+      width: 100%;
+      height: 70%;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    @media screen and (min-width: 768px) {
+      .bg-code-wrapper {
+        width: 45%;
+        max-width: 630px;
+        background-image: url(./images/hero_bg.webp);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .bg-code-wrapper {
+        background-image: url(./images/hero_bg_small.webp);
+        height: 40dvh;
+        width: 100%;
+        order: 2;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
       <div class="nav-center">
         <div class="nav-header">
-          <button class="nav-toggle">
-            <i class="fas fa-bars"></i>
+          <button class="nav-toggle" title="toggle button">
+            <img src="./images/icons/bars-solid.svg" alt="toggle icon">
           </button>
           <a class="cv-file" href="https://drive.google.com/file/d/16o_RVWnPhjW-vZ3aZKuS9xsrsNz2QOYt/view?usp=drive_link" download target="_blank" rel="noopener noreferrer" title="Download CV">
-            <i class="fa-solid fa-file-pdf"></i>
+            <img src="./images/icons/file-pdf.svg" alt="CV icon">
           </a>
         </div>
         <ul class="nav-links">
@@ -42,7 +90,7 @@
           </li>
         </ul>
         <a class="cv-file" href="https://drive.google.com/file/d/16o_RVWnPhjW-vZ3aZKuS9xsrsNz2QOYt/view?usp=drive_link" download target="_blank" rel="noopener noreferrer" title="Download CV">
-          <i class="fa-solid fa-file-pdf"></i>
+          <img src="./images/icons/file-pdf.svg" alt="CV icon">
         </a>
       </div>
     </nav>
@@ -110,6 +158,11 @@
       <section id="projects-section" class="projects-section">
         <h2 class="projects-heading">My Projects</h2>
         <div id="projects-grid" class="projects-grid">
+          <div class="project-card-skeleton"></div>
+          <div class="project-card-skeleton"></div>
+          <div class="project-card-skeleton"></div>
+          <div class="project-card-skeleton"></div>
+          <div class="project-card-skeleton"></div>
         </div>
       </section>
     </div>
@@ -121,13 +174,13 @@
           <h2 class="contact-heading">Let's work together</h2>
           <div class="social-links">
             <a href="https://github.com/savvy-itch" target="_blank" rel="noopener noreferrer" title="GitHub">
-              <i class="fa-brands fa-github"></i>
+              <img src="./images/icons/github.svg" alt="github icon" />
             </a>
             <a href="https://www.linkedin.com/in/михайло-савич-a31366248/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
+              <img src="./images/icons/linkedin-in.svg" alt="linkedin icon" />
             </a>
             <a href="https://t.me/sprone13" target="_blank" rel="noopener noreferrer" title="Telegram">
-              <i class="fa-brands fa-telegram"></i>
+              <img src="./images/icons/telegram.svg" alt="telegram icon" />
             </a>
           </div>
         </div>
@@ -145,5 +198,6 @@
   </footer>
   <script src="./scripts/main.js" type="module"></script>
   <script src="./scripts/projectsSection.js" type="module"></script>
+  <script src="./scripts/perf.js"></script>
 </body>
 </html>

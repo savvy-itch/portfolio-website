@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Roboto-Bold";
+  src: local("Roboto-Bold"), url("../fonts/Roboto-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto-Bold-Italic";
+  src: local("Roboto-Bold-Italic"), url("../fonts/Roboto-BoldItalic.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: local("Roboto-Regular"), url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-display: swap;
+}
 .projects-section {
   display: flex;
   justify-content: space-around;
@@ -6,9 +21,9 @@
 }
 
 .projects-heading {
+  font-family: "Roboto-Bold", sans-serif;
   color: hsl(47, 80%, 60%);
   font-size: 3rem;
-  font-weight: 700;
 }
 
 .projects-grid {
@@ -19,9 +34,6 @@
   align-items: center;
   margin: 1.5rem 0;
   width: 100%;
-}
-.projects-grid a {
-  text-decoration: none;
 }
 
 .project-card {
@@ -38,24 +50,17 @@
   -moz-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
 }
-
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  font-size: 1.6rem;
-  border-bottom: 2px solid #191d32;
+.project-card a {
+  text-decoration: none;
 }
 
-.project-header-icons-wrapper {
-  display: flex;
-  gap: 5px;
-}
-
-.icon-img {
-  position: relative;
-  height: 25px;
+.project-card-skeleton {
+  background-color: #ccc;
+  border: 1px solid #0c1227;
+  border-radius: 12px;
+  width: 45%;
+  max-width: 80%;
+  height: 300px;
 }
 
 .project-code-link {
@@ -74,33 +79,26 @@
   overflow: hidden;
 }
 
-.thumbnail-wrapper {
-  width: 100%;
-  height: 70%;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .project-title {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Roboto-Bold", sans-serif;
   padding: 1rem;
   font-size: 1.6rem;
   border-top: 2px solid #191d32;
   text-align: center;
-  font-weight: 700;
   text-decoration: none;
   height: 5rem;
   transition: font-size 0.3s ease-out;
 }
-.project-title a {
+
+.project-title > a {
   color: #0c1227;
   position: relative;
 }
-.project-title a::before {
+
+.project-title > a::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -111,11 +109,13 @@
   background-color: #0c1227;
   transition: width 0.3s ease-out;
 }
-.project-title a:hover::before {
+
+.project-title > a:hover::before {
   width: 100%;
 }
 
 .tooltip {
+  font-family: "Roboto-Regular", sans-serif;
   background-color: hsl(246, 100%, 4%);
   color: #fffce4;
   text-transform: uppercase;
@@ -145,37 +145,47 @@
   position: relative;
 }
 
+.icon-wrapper > img {
+  width: 2rem;
+  height: 2rem;
+}
+
 .expand-btn {
   display: none;
 }
 
 .project-links {
+  font-family: "Roboto-Bold", sans-serif;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.project-links i {
-  font-size: 0.7rem;
+.project-links img {
+  width: 0.7rem;
+  height: 0.7rem;
 }
 
+.project-details {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
 .project-details p {
   color: #0c1227;
   margin: 1rem 0;
 }
 
 .project-role {
+  font-family: "Roboto-Bold-Italic", sans-serif;
   text-transform: capitalize;
-  font-style: italic;
-  font-weight: bold;
 }
 
 .project-stack {
   display: flex;
   gap: 0.5rem;
 }
-.project-stack img {
-  width: 2rem;
-  height: 2rem;
+
+.project-desc {
+  font-family: "Roboto-Regular", sans-serif;
 }
 
 .details-header {
@@ -185,53 +195,12 @@
   gap: 1rem;
 }
 
-@media screen and (max-width: 768px) {
-  .projects-grid {
-    justify-content: center;
-    gap: 2rem;
-  }
-  .project-card {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 300px;
-    flex-direction: column;
-  }
-  .project-links {
-    flex-direction: row;
-  }
-  .project-details {
-    width: 100%;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease-out;
-  }
-  .project-details.active {
-    padding: 1rem;
-  }
-  .project-thumbnail {
-    max-width: 100%;
-    height: 270px;
-  }
-  .expand-btn {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-size: 1.1rem;
-    padding: 5px;
-    border: none;
-    transition: background-color 0.3s;
-  }
-  .expand-btn:hover {
-    background-color: hsl(0, 0%, 90%);
-  }
-  .details-header {
-    flex-direction: column;
-  }
-}
 @media screen and (min-width: 768px) {
   .project-card:nth-child(odd):hover {
     width: 80%;
+  }
+  .project-card:nth-child(odd):hover .project-details {
+    opacity: 1;
   }
   .project-card:nth-child(odd):hover + .project-card {
     width: 10%;
@@ -242,6 +211,9 @@
   .project-card:nth-child(even):hover {
     width: 80%;
   }
+  .project-card:nth-child(even):hover .project-details {
+    opacity: 1;
+  }
   .project-card:hover .project-details {
     width: 60%;
     padding: 1rem;
@@ -251,6 +223,62 @@
   }
   .project-details {
     width: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    margin: 1.5rem 0;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 300px;
+    flex-direction: column;
+  }
+  .project-card-skeleton {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+  }
+  .project-links {
+    flex-direction: row;
+  }
+  .project-details {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.5s ease-out;
+  }
+  .project-details.active {
+    padding: 1rem;
+    opacity: 1;
+  }
+  .project-thumbnail {
+    max-width: 100%;
+    height: 270px;
+  }
+  .expand-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  .expand-btn > img {
+    width: 22px;
+    height: 22px;
+  }
+  .expand-btn:hover {
+    background-color: hsl(0, 0%, 90%);
+  }
+  .details-header {
+    flex-direction: column;
   }
 }
 
