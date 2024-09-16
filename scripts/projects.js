@@ -6,13 +6,15 @@ export const projects = [
       'Next.js',
       'TypeScript',
       'Tailwind CSS',
+      'Node.js',
+      'MongoDB'
     ],
-    role: 'frontend',
+    role: 'full stack',
     img: '../images/vocabit_thumbnail.webp',
     imgAlt: 'language learning app',
-    demoUrl: 'https://vocab-it.vercel.app/',
+    demoUrl: 'https://vocab-it-frontend.vercel.app/',
     codeUrl: 'https://github.com/savvy-itch/vocab-it',
-    desc: 'A language learning app I built for my needs. Users can learn words by completing lessons in the form of flash cards, create/edit/delete vocabularies, add/edit/delete words, import words from a file (.csv & .txt). The data is being stored in local storage of the browser.'
+    desc: 'A language learning app I built for my needs. Users can learn words by completing lessons in the form of flash cards, create/edit/delete vocabularies, add/edit/delete words, import words from a file (.csv & .txt).'
   },
   {
     name: 'Formula 1 Stats',
