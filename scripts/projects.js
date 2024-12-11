@@ -17,6 +17,19 @@ export const projects = [
     desc: 'A language learning app I built for my needs. Users can learn words by completing lessons in the form of flash cards, create/edit/delete vocabularies, add/edit/delete words, import words from a file (.csv & .txt).'
   },
   {
+    name: 'On Pace',
+    stack: [
+      'TypeScript',
+      'CSS',
+    ],
+    role: 'front-end',
+    img: '../images/on-pace_thumbnail.webp',
+    imgAlt: 'website blocking extension',
+    demoUrl: 'https://chromewebstore.google.com/detail/on-pace/kpniallfjagbbjigjigdlkoambcipoea?hl=en-US&utm_source=ext_sidebar',
+    codeUrl: 'https://github.com/savvy-itch/site-block-extension',
+    desc: 'A browser extension for blocking websites. User can add, edit, delete and temporarily disable any websites. The extension aims to increase productivity by eliminating online distractors and to aid people with ADHD by guarding them from unwanted resources.'
+  },
+  {
     name: 'Formula 1 Stats',
     stack: [
       'React',

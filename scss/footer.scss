@@ -3,6 +3,7 @@
 
 @include roboto-bold;
 @include roboto-italic;
+@include roboto-regular;
 
 .footer-section {
   border-top: 2px solid hsl(0, 0%, 73%);
@@ -117,6 +118,13 @@
 .social-links img {
   width: 22px;
   height: 22px;
+}
+
+.developed-para {
+  font-family: 'Roboto-Regular', sans-serif;
+  color: #fff;
+  width: fit-content;
+  margin: 0 auto 1rem auto;
 }
 
 @media screen and (max-width: 968px) {
