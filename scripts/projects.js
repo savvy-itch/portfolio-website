@@ -17,6 +17,21 @@ export const projects = [
     desc: 'A language learning app I built for my needs. Users can learn words by completing lessons in the form of flash cards, create/edit/delete vocabularies, add/edit/delete words, import words from a file (.csv & .txt).'
   },
   {
+    name: 'Blog site',
+    stack: [
+      'Django',
+      'Python',
+      'Postgre SQL',
+      'CSS',
+    ],
+    role: 'full stack',
+    img: '../images/blog_thumbnail.jpg',
+    imgAlt: 'blog site for posting articles',
+    demoUrl: '',
+    codeUrl: 'https://github.com/savvy-itch/blog-site',
+    desc: 'A blog site for posting articles. Users can subscribe to receive email notifications when a new article gets published. The unsubscribe feature is implemented as well. The articles are stored as Markdown in the database.'
+  },
+  {
     name: 'On Pace',
     stack: [
       'TypeScript',

@@ -39,4 +39,16 @@ export const stackIcons = [
     name: 'Redux',
     icon: '../images/icons/redux-icon.svg'
   },
+  {
+    name: 'Django',
+    icon: '../images/icons/django-icon.svg'
+  },
+  {
+    name: 'Python',
+    icon: '../images/icons/python-icon.svg'
+  },
+  {
+    name: 'Postgre SQL',
+    icon: '../images/icons/postgresql-icon.svg'
+  },
 ]

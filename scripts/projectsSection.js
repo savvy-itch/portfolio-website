@@ -26,7 +26,7 @@ function createProjectCard(project) {
         <img src=${project.img} alt="" width="0" height="0" style="display: none !important;" />
       </div>
       <div class="project-title">
-        <a href=${project.demoUrl} target="_blank" rel="noopener noreferrer">
+        <a href=${project.demoUrl ? project.demoUrl : project.codeUrl} target="_blank" rel="noopener noreferrer">
           ${project.name}
         </a>
       </div>
@@ -41,9 +41,11 @@ function createProjectCard(project) {
           <a class="project-code-link" href=${project.codeUrl} target="_blank" rel="noopener noreferrer">
             View Code <img src="./images/icons/link-icon.svg" alt="link icon" />
           </a>
-          <a class="project-code-link" href=${project.demoUrl} target="_blank" rel="noopener noreferrer">
-            Live Demo <img src="./images/icons/link-icon.svg" alt="link icon" />
-          </a>
+          ${project.demoUrl && (
+            `<a class="project-code-link" href=${project.demoUrl} target="_blank" rel="noopener noreferrer">
+              Live Demo <img src="./images/icons/link-icon.svg" alt="link icon" />
+            </a>`
+          )}
         </div>
       </div>
       <p class="project-role">${project.role}</p>
