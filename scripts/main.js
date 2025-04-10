@@ -8,7 +8,7 @@ const navLinks = links.querySelectorAll('a');
 const navToggle = document.querySelector('.nav-toggle');
 const showLinks = document.querySelector('.show-links');
 const headerTxt = "Hello, I'm Michael";
-const subheaderTxt = "Front-end Developer";
+const subheaderTxt = "Full Stack Developer";
 let typeSpeed = 95;
 let cursorSpeed = 500;
 let showCursor = true;
@@ -29,7 +29,7 @@ function typeWords() {
       y++;
     }
   }
-  setTimeout(typeWords, typeSpeed)
+  setTimeout(typeWords, typeSpeed);
 }
 
 // trigger animation on viewport visibility

@@ -7,14 +7,15 @@ export const projects = [
       'TypeScript',
       'Tailwind CSS',
       'Node.js',
-      'MongoDB'
+      'MongoDB',
+      'Electron'
     ],
-    role: 'full stack',
+    role: ['full stack', 'desktop'],
     img: '../images/vocabit_thumbnail.webp',
     imgAlt: 'language learning app',
-    demoUrl: 'https://vocab-it-frontend.vercel.app/',
+    demoUrl: 'https://vocab-it-clientside.vercel.app/',
     codeUrl: 'https://github.com/savvy-itch/vocab-it',
-    desc: 'A language learning app I built for my needs. Users can learn words by completing lessons in the form of flash cards, create/edit/delete vocabularies, add/edit/delete words, import words from a file (.csv & .txt).'
+    desc: 'A language learning app I built for my needs. Users can learn words by completing lessons in the form of flash cards, create/edit/delete vocabularies, add/edit/delete words, import words from a file (.csv & .txt). There\'s 3 versions of the app - full stack, client-side (for demo purposes & daily usage), and desktop.'
   },
   {
     name: 'Blog site',
@@ -24,12 +25,12 @@ export const projects = [
       'Postgre SQL',
       'CSS',
     ],
-    role: 'full stack',
+    role: ['full stack'],
     img: '../images/blog_thumbnail.jpg',
     imgAlt: 'blog site for posting articles',
     demoUrl: '',
     codeUrl: 'https://github.com/savvy-itch/blog-site',
-    desc: 'A blog site for posting articles. Users can subscribe to receive email notifications when a new article gets published. The unsubscribe feature is implemented as well. The articles are stored as Markdown in the database.'
+    desc: 'A blog site for posting articles. Users can subscribe to receive email notifications when a new article gets published. The unsubscribe feature is implemented as well. The articles are stored as Markdown in the database. [Not hosted]'
   },
   {
     name: 'On Pace',
@@ -37,7 +38,7 @@ export const projects = [
       'TypeScript',
       'CSS',
     ],
-    role: 'front-end',
+    role: ['front-end'],
     img: '../images/on-pace_thumbnail.webp',
     imgAlt: 'website blocking extension',
     demoUrl: 'https://chromewebstore.google.com/detail/on-pace/kpniallfjagbbjigjigdlkoambcipoea?hl=en-US&utm_source=ext_sidebar',
@@ -50,7 +51,7 @@ export const projects = [
       'React',
       'CSS',
     ],
-    role: 'frontend',
+    role: ['front-end'],
     img: '../images/f1_thumbnail.webp',
     imgAlt: 'f1 stats',
     demoUrl: 'https://f1-stats-react.netlify.app',
@@ -65,7 +66,7 @@ export const projects = [
       'MongoDB',
       'Jest',
     ],
-    role: 'full stack',
+    role: ['full stack'],
     img: '../images/pizza-shop_thumbnail.webp',
     imgAlt: 'pizza shop',
     demoUrl: 'https://pizza-shop-6cqk.onrender.com',
@@ -79,7 +80,7 @@ export const projects = [
       'JavaScript',
       'CSS',
     ],
-    role: 'frontend',
+    role: ['front-end'],
     img: '../images/fairy_run.webp',
     imgAlt: 'fairy run',
     demoUrl: 'https://savvy-itch.github.io/fairy-run/',
@@ -93,7 +94,7 @@ export const projects = [
       'Redux',
       'CSS'
     ],
-    role: 'frontend',
+    role: ['front-end'],
     img: '../images/drum-machine.webp',
     imgAlt: 'drum machine app',
     demoUrl: 'https://drum-machine-redux-sib.netlify.app/',

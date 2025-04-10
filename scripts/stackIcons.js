@@ -51,4 +51,8 @@ export const stackIcons = [
     name: 'Postgre SQL',
     icon: '../images/icons/postgresql-icon.svg'
   },
+  {
+    name: 'Electron',
+    icon: '../images/icons/electron-icon.svg'
+  },
 ]

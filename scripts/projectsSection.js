@@ -48,7 +48,7 @@ function createProjectCard(project) {
           )}
         </div>
       </div>
-      <p class="project-role">${project.role}</p>
+      <p class="project-role">${project.role.join(', ')}</p>
       <p class="project-desc">${project.desc}</p>
     </div>
   `;
