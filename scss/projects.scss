@@ -11,11 +11,13 @@ $tooltip-bg: hsl(246, 100%, 4%);
   @include flex-justify-around;
   flex-direction: column;
 }
+
 .projects-heading {
   font-family: 'Roboto-Bold', sans-serif;
   color: hsl(47, 80%, 60%);
   font-size: 3rem;
 }
+
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
@@ -25,6 +27,7 @@ $tooltip-bg: hsl(246, 100%, 4%);
   margin: 1.5rem 0;
   width: 100%;
 }
+
 .project-card {
   background-color: #ccc;
   border: 1px solid $dark-text;
@@ -35,9 +38,9 @@ $tooltip-bg: hsl(246, 100%, 4%);
   overflow: hidden;
   display: flex;
   transition: width .4s ease-out;
-  -webkit-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
 
   a {
     text-decoration: none;
@@ -59,23 +62,15 @@ $tooltip-bg: hsl(246, 100%, 4%);
   font-weight: 700;
   text-transform: uppercase;
 }
+
 .project-code-link:hover {
   text-decoration: underline;
 }
+
 .project-thumbnail {
   width: 100%;
   overflow: hidden;
 }
-
-// moved to HTML
-// .thumbnail-wrapper {
-//   width: 100%;
-//   height: 70%;
-//   overflow: hidden;
-//   background-size: cover;
-//   background-position: center;
-//   background-repeat: no-repeat;
-// }
 
 .project-title {
   @include flex-center;
@@ -89,12 +84,12 @@ $tooltip-bg: hsl(246, 100%, 4%);
   transition: font-size .3s ease-out;
 }
 
-.project-title > a {
+.project-title>a {
   color: $dark-text;
   position: relative;
 }
 
-.project-title > a::before {
+.project-title>a::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -106,7 +101,7 @@ $tooltip-bg: hsl(246, 100%, 4%);
   transition: width .3s ease-out;
 }
 
-.project-title > a:hover::before {
+.project-title>a:hover::before {
   width: 100%;
 }
 
@@ -115,6 +110,7 @@ $tooltip-bg: hsl(246, 100%, 4%);
   background-color: $tooltip-bg;
   color: $light-text;
   text-transform: uppercase;
+  text-align: center;
   font-size: .7rem;
   padding: 8px 12px;
   border-radius: 6px;
@@ -122,7 +118,9 @@ $tooltip-bg: hsl(246, 100%, 4%);
   top: 100%;
   transform: translateX(-50%);
   left: 50%;
+  white-space: nowrap;
 }
+
 .tooltip::before {
   content: '';
   display: block;
@@ -135,11 +133,12 @@ $tooltip-bg: hsl(246, 100%, 4%);
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
 }
+
 .icon-wrapper {
   position: relative;
 }
 
-.icon-wrapper > img {
+.icon-wrapper>img {
   width: 2rem;
   height: 2rem;
 }
@@ -192,6 +191,7 @@ $tooltip-bg: hsl(246, 100%, 4%);
 }
 
 @media screen and (min-width: 768px) {
+
   // expand left card
   .project-card:nth-child(odd):hover {
     width: 80%;
@@ -202,9 +202,9 @@ $tooltip-bg: hsl(246, 100%, 4%);
   }
 
   // collapse right card when left one is expanded
-  .project-card:nth-child(odd):hover + .project-card {
+  .project-card:nth-child(odd):hover+.project-card {
     width: 10%;
-    
+
     .project-title {
       font-size: 1rem;
     }
@@ -225,7 +225,7 @@ $tooltip-bg: hsl(246, 100%, 4%);
       width: 60%;
       padding: 1rem;
     }
-  
+
     .project-thumbnail {
       max-width: 40%;
     }
@@ -261,7 +261,7 @@ $tooltip-bg: hsl(246, 100%, 4%);
   .project-links {
     flex-direction: row;
   }
-  
+
   .project-details {
     width: 100%;
     overflow: hidden;
@@ -288,8 +288,8 @@ $tooltip-bg: hsl(246, 100%, 4%);
     border: none;
     transition: background-color .3s;
   }
-  
-  .expand-btn > img {
+
+  .expand-btn>img {
     width: 22px;
     height: 22px;
   }

@@ -15,7 +15,7 @@ export const projects = [
     imgAlt: 'language learning app',
     demoUrl: 'https://vocab-it-clientside.vercel.app/',
     codeUrl: 'https://github.com/savvy-itch/vocab-it',
-    desc: 'A language learning app I built for my needs. Users can learn words by completing lessons in the form of flash cards, create/edit/delete vocabularies, add/edit/delete words, import words from a file (.csv & .txt). There\'s 3 versions of the app - full stack, client-side (for demo purposes & daily usage), and desktop.'
+    desc: 'A language learning app I built for my needs. Users can learn words by completing lessons in the form of flash cards, create/edit/delete vocabularies, add/edit/delete words, import words from a file (.csv & .txt). There\'s 3 versions of the app - full stack, client-side (for demo purposes), and desktop.'
   },
   {
     name: 'Blog site',
@@ -26,7 +26,7 @@ export const projects = [
       'CSS',
     ],
     role: ['full stack'],
-    img: '../images/blog_thumbnail.jpg',
+    img: '../images/blog_thumbnail.webp',
     imgAlt: 'blog site for posting articles',
     demoUrl: '',
     codeUrl: 'https://github.com/savvy-itch/blog-site',
@@ -86,6 +86,20 @@ export const projects = [
     demoUrl: 'https://savvy-itch.github.io/fairy-run/',
     codeUrl: 'https://github.com/savvy-itch/fairy-run',
     desc: 'Fairy Run is a browser 2d runner game similar to Google Chrome&apos;s dino game. I&apos;ve built it mainly for fun and to test my skills in the areas I don&apos;t normally work. The stack is vanilla by design as I wanted to use the most basic tools and build everything from the ground up. In the game player must jump the obstacles. The game is fully responsive and incorporates sound effects for better experience.'
+  },
+  {
+    name: 'Another Tasks App',
+    stack: [
+      'React Native',
+      'Expo',
+      'SQLite',
+    ],
+    role: ['mobile'],
+    img: '../images/tasks_thumbnail.webp',
+    imgAlt: 'tasks app',
+    demoUrl: '',
+    codeUrl: 'https://github.com/savvy-itch/another-tasks-app',
+    desc: 'An Android app for planning tasks. Users can set reminder notifications. No Internet connection or signup required.'
   },
   {
     name: 'Drum Machine',

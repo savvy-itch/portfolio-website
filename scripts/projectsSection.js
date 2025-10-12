@@ -21,15 +21,15 @@ function createProjectCard(project) {
   card.classList.add('project-card');
   card.setAttribute('name', project.name);
   card.innerHTML = `
-    <div class="project-thumbnail">
-      <div style="background-image: url(${project.img})" class="thumbnail-wrapper">
+  <div class="project-thumbnail">
+    <div style="background-image: url(${project.img})" class="thumbnail-wrapper">
         <img src=${project.img} alt="" width="0" height="0" style="display: none !important;" />
-      </div>
-      <div class="project-title">
-        <a href=${project.demoUrl ? project.demoUrl : project.codeUrl} target="_blank" rel="noopener noreferrer">
-          ${project.name}
-        </a>
-      </div>
+    </div>
+    <div class="project-title">
+      <a href=${project.demoUrl ? project.demoUrl : project.codeUrl} target="_blank" rel="noopener noreferrer">
+        ${project.name}
+      </a>
+    </div>
     </div>
     <button class="expand-btn" title="expand button">
       <img src="./images/icons/chevron-down-solid.svg" alt="expand icon" />
@@ -42,10 +42,10 @@ function createProjectCard(project) {
             View Code <img src="./images/icons/link-icon.svg" alt="link icon" />
           </a>
           ${project.demoUrl && (
-            `<a class="project-code-link" href=${project.demoUrl} target="_blank" rel="noopener noreferrer">
+      `<a class="project-code-link" href=${project.demoUrl} target="_blank" rel="noopener noreferrer">
               Live Demo <img src="./images/icons/link-icon.svg" alt="link icon" />
             </a>`
-          )}
+    )}
         </div>
       </div>
       <p class="project-role">${project.role.join(', ')}</p>
@@ -58,7 +58,7 @@ function createProjectCard(project) {
 function applyEvents() {
   const projectCards = [...projectsGrid.querySelectorAll('.project-card')];
 
-  for(let i = 0; i < projectCards.length; i++) {
+  for (let i = 0; i < projectCards.length; i++) {
     populateStack(projectCards[i], i);
     const expandBtn = projectCards[i].querySelector('.expand-btn');
     const cardDetails = projectCards[i].querySelector('.project-details');
@@ -73,15 +73,15 @@ function applyEvents() {
 function collapsePrevSibling(i, projectCards) {
   if (window.innerWidth >= 768) {
     projectCards[i - 1].style.width = '10%';
-    const projectTitle = projectCards[i-1].querySelector('.project-title');
+    const projectTitle = projectCards[i - 1].querySelector('.project-title');
     projectTitle.style.fontSize = '1rem';
   }
 }
 
 function resetPrevSibling(i, projectCards) {
   if (window.innerWidth >= 768) {
-    projectCards[i-1].style.width = '';
-    const projectTitle = projectCards[i-1].querySelector('.project-title');
+    projectCards[i - 1].style.width = '';
+    const projectTitle = projectCards[i - 1].querySelector('.project-title');
     projectTitle.style.fontSize = '';
   }
 }
@@ -102,12 +102,12 @@ function collapseOtherCards(projectCards, name) {
   for (let i = 0; i < projectCards.length; i++) {
     const projectDetails = projectCards[i].querySelector('.project-details');
     const projectTitle = projectCards[i].getAttribute('name');
-    if (projectDetails.classList.contains('active') 
+    if (projectDetails.classList.contains('active')
       && projectTitle !== name) {
-        projectDetails.classList.toggle('active');
-        const expandBtn = projectCards[i].querySelector('.expand-btn');
-        projectDetails.style.maxHeight = null;
-        expandBtn.innerHTML = `<img src="./images/icons/chevron-down-solid.svg" alt="expand icon" />`;
+      projectDetails.classList.toggle('active');
+      const expandBtn = projectCards[i].querySelector('.expand-btn');
+      projectDetails.style.maxHeight = null;
+      expandBtn.innerHTML = `<img src="./images/icons/chevron-down-solid.svg" alt="expand icon" />`;
     }
   }
 }
@@ -118,8 +118,9 @@ function populateStack(card, idx) {
     const iconUrl = stackIcons.find(el => el.name === projects[idx].stack[i]).icon;
     const iconWrapper = document.createElement('div');
     iconWrapper.classList.add('icon-wrapper');
+    let stackName = projects[idx].stack[i].replaceAll(' ', '-');
     iconWrapper.innerHTML = `
-      <img src=${iconUrl} alt=${projects[idx].stack[i]} data-tech=${projects[idx].stack[i]} />
+      <img src=${iconUrl} alt=${stackName} data-tech=${stackName} loading="lazy" />
     `;
     iconWrapper.addEventListener('mouseenter', (e) => displayTooltip(e));
     iconWrapper.addEventListener('mouseleave', (e) => hideTooltip(e));
@@ -131,7 +132,8 @@ function displayTooltip(e) {
   if (e.currentTarget.classList.contains('icon-wrapper')) {
     const tooltip = document.createElement('div');
     tooltip.classList.add('tooltip');
-    tooltip.innerText = e.currentTarget.querySelector('img').dataset.tech;
+    let stackName = (e.currentTarget.querySelector('img').dataset.tech).replaceAll('-', ' ');
+    tooltip.innerText = stackName;
     e.currentTarget.appendChild(tooltip);
   }
 }

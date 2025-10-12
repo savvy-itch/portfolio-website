@@ -20,6 +20,18 @@ export const stackIcons = [
     icon: '../images/icons/react-icon.svg'
   },
   {
+    name: 'React Native',
+    icon: '../images/icons/reactnative-icon.svg'
+  },
+  {
+    name: 'Expo',
+    icon: '../images/icons/expo-icon.svg'
+  },
+  {
+    name: 'SQLite',
+    icon: '../images/icons/sqlite-icon.svg'
+  },
+  {
     name: 'CSS',
     icon: '../images/icons/css-icon.svg'
   },
